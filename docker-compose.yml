@@ -6,7 +6,7 @@ services:
     container_name: speedtest-dashboard
     restart: unless-stopped
     ports:
-      - "8080:8080"
+      - "127.0.0.1:${PORT}:${PORT}"
     volumes:
       - ./backend/data:/app/data
     environment:
