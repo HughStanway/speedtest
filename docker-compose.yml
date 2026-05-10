@@ -1,0 +1,16 @@
+services:
+  speedtest:
+    build:
+      context: .
+      dockerfile: backend/Dockerfile
+    container_name: speedtest-dashboard
+    restart: unless-stopped
+    ports:
+      - "8080:8080"
+    volumes:
+      - ./backend/data:/app/data
+    environment:
+      - TZ=Europe/London
+      - GIN_MODE=release
+    env_file:
+      - .env

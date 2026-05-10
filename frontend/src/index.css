@@ -1,0 +1,59 @@
+@import "tailwindcss";
+
+:root {
+  --color-download: #0d9488;
+  --color-upload: #7c3aed;
+  --color-ping: #f59e0b;
+  --color-jitter: #ec4899;
+
+  --gauge-track: #e5e7eb;
+  --gauge-gradient-start: #0d9488;
+  --gauge-gradient-mid: #7c3aed;
+  --gauge-gradient-end: #ec4899;
+
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+  color-scheme: light;
+  color: #1e293b;
+  background-color: #f8fafc;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+}
+
+#root {
+  width: 100%;
+}
+
+/* Gauge needle sweep animation */
+@keyframes needle-sweep {
+  from { transform: rotate(var(--needle-from, -135deg)); }
+  to   { transform: rotate(var(--needle-to, -135deg)); }
+}
+
+/* Pulse glow for live indicator */
+@keyframes pulse-glow {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.4; }
+}
+
+/* Fade in for cards */
+@keyframes fade-in-up {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
