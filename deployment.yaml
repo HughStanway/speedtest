@@ -7,7 +7,7 @@ services:
     artifact: "speedtest-dashboard@latest"
     type: "docker-image"
     ports:
-      - "8080:8080"
+      - "4000:8080"
     volumes:
       - "speedtest_data:/app/data"
     environment:
