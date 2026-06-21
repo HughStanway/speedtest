@@ -1,0 +1,19 @@
+version: 1
+deployment:
+  name: "speedtest-stack"
+  description: "Ookla Speedtest Dashboard stack using native docker image"
+services:
+  speedtest:
+    artifact: "speedtest-dashboard@latest"
+    type: "docker-image"
+    ports:
+      - "8080:8080"
+    volumes:
+      - "speedtest_data:/app/data"
+    environment:
+      PORT: "8080"
+      DB_PATH: "/app/data/speedtest.db"
+      SPEEDTEST_BINARY: "speedtest"
+      GIN_MODE: "release"
+volumes:
+  speedtest_data: {}

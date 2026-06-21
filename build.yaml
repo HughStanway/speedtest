@@ -1,0 +1,10 @@
+metadata:
+  name: speedtest-dashboard
+  versionScheme: semver
+build:
+  image: alpine:latest
+  timeoutSeconds: 600
+artifacts:
+  - name: speedtest-dashboard
+    pattern: "backend/Dockerfile"
+    type: "docker-image"
