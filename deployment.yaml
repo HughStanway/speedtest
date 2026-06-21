@@ -16,7 +16,7 @@ services:
       SPEEDTEST_BINARY: "speedtest"
       GIN_MODE: "release"
     healthCheck:
-      endpoint: "GET http://localhost:8080/api/status"
+      endpoint: "GET http://172.20.0.100:4000/api/status"
       interval: "30s"
       timeout: "5s"
       retries: 3
